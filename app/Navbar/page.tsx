@@ -1,5 +1,6 @@
 "use client"
 import * as React from "react";
+import Link from "next/link";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -27,10 +28,10 @@ function ModeToggle() {
   return (
     <header className=" sticky border-b-2 top-0 z-50 w-full  backdrop-blur">
       <div className="container flex h-14 items-center">
-        <div className="mr-4 hidden md:flex">
+        <div className="mr-4  md:flex">
           <a className="mr-6 flex items-center space-x-2" href="/">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-9" viewBox="0 0 32 32"><path d="M22.65 19.25a1 1 0 0 0-1.41 0l-1 1a2.17 2.17 0 0 1-3 0L11.92 15a2.44 2.44 0 0 1 0-3.46l.79-.89a.53.53 0 0 0 .06-.1.94.94 0 0 0 .49-.32 1 1 0 0 0-.15-1.4L8.43 5a1 1 0 0 0-1.34.07l-1 1a10.2 10.2 0 0 0 0 14.42L11.58 26a10.09 10.09 0 0 0 14.24 0l1.07-1.07a1 1 0 0 0 0-1.42zm1.75 5.32a8.08 8.08 0 0 1-11.4 0l-5.48-5.48a8.2 8.2 0 0 1 0-11.58l.35-.35L11 9.65l-.46.53a4.42 4.42 0 0 0 0 6.24l5.28 5.28a4.1 4.1 0 0 0 5.82 0l.33-.33 2.83 2.83zm-.95-10.48c.76-1.15.4-2.13-1.51-4s-2.88-2.27-4-1.51a1 1 0 0 1-1.14-1.7c2.89-1.91 5.36.57 6.56 1.76s3.64 3.67 1.76 6.56a1 1 0 0 1-.83.44 1 1 0 0 1-.56-.16 1 1 0 0 1-.28-1.39zm4.48 4a1 1 0 0 1-.78.37 1 1 0 0 1-.63-.22 1 1 0 0 1-.15-1.4c3.23-4 0-8.09-1.6-9.65s-5.61-4.83-9.65-1.6a1 1 0 0 1-1.4-.15 1 1 0 0 1 .15-1.41c3.62-2.9 8.34-2.23 12.32 1.74s4.64 8.74 1.74 12.36z"/></svg>
-            <span className="hidden font-bold sm:inline-block">Distress App</span>
+            <span className="font-bold sm:inline-block">Distress App</span>
           </a>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             <NavigationMenu>
@@ -49,6 +50,11 @@ function ModeToggle() {
           </button>
         </div>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+          <Link href="/signIn">
+          <button className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black">
+            <p className="text-sm font-medium">sign In</p>
+          </button>
+          </Link>
           <nav className="flex items-center">
             {/**discord icon */}
             <div>
