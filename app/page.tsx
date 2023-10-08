@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import Navbar from "@/app/Navbar/page";
+import Navbar from "@/app/Navbar/nav";
 import Footer from '@/app/Footer/page';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 export default function Home() {
   const [userLocation, setUserLocation] = useState<GeolocationPosition | null>(null);
   const [error, setError] = useState<string | null>(null);
+
 
   useEffect(() => {
     let watchId: number | undefined;
@@ -127,7 +128,6 @@ return (
             <p>Longitude: {userLocation.coords.longitude}</p>
             <p>Accuracy: {userLocation.coords.accuracy}</p>
             <p>Timestamp: {userLocation.timestamp}</p>
-            {/* Include other details like altitude, heading, etc. */}
           </div>
         )}
 

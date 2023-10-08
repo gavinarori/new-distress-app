@@ -1,83 +1,61 @@
 "use client"
+import { signIn } from "next-auth/react";
+import {
+  useState,
+} from "react";
+import  LoadingDots from "@/app/icons/loading-dots";
+import  Google from "@/app/icons/google";
+import Image from "next/image";
 
-import * as React from "react"
-
-import { cn } from "@/lib/utils"
-import LoadingDots from "../icons/loading-dots"
-import Github from "@/app/icons/github"
-import Google from "@/app/icons/google"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-
-interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false)
-
-  async function onSubmit(event: React.SyntheticEvent) {
-    event.preventDefault()
-    setIsLoading(true)
-
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 3000)
-  }
+const SignInModal = () => {
+  const [signInClicked, setSignInClicked] = useState(false);
 
   return (
-    <div className={cn("grid gap-6", className)} {...props}>
-      <form onSubmit={onSubmit}>
-        <div className="grid gap-2">
-          <div className="grid gap-1">
-            <Label className="sr-only" htmlFor="email">
-              Email
-            </Label>
-            <Input
-              id="email"
-              placeholder="name@example.com"
-              type="email"
-              autoCapitalize="none"
-              autoComplete="email"
-              autoCorrect="off"
-              disabled={isLoading}
+    
+      <div className="w-full overflow-hidden shadow-xl md:max-w-md md:rounded-2xl md:border md:border-gray-200">
+        <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center md:px-16">
+          <a href="https://precedent.dev">
+            <Image
+              src="/vercel.svg"
+              alt="Logo"
+              className="h-10 w-10 rounded-full"
+              width={20}
+              height={20}
             />
-          </div>
-          <Button disabled={isLoading}>
-            {isLoading && (
-              <LoadingDots />
+          </a>
+          <h3 className="font-display text-2xl font-bold">Sign In</h3>
+          <p className="text-sm text-gray-500">
+             only your email and profile picture will be stored.
+            
+          </p>
+        </div>
+
+        <div className="flex flex-col space-y-4 bg-gray-50 px-4 py-8 md:px-16">
+          <button
+            disabled={signInClicked}
+            className={`${
+              signInClicked
+                ? "cursor-not-allowed border-gray-200 bg-gray-100"
+                : "border border-gray-200 bg-white text-black hover:bg-gray-50"
+            } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
+            onClick={() => {
+              setSignInClicked(true);
+              signIn("google");
+            }}
+          >
+            {signInClicked ? (
+              <LoadingDots color="#808080" />
+            ) : (
+              <>
+                <Google className="h-5 w-5" />
+                <p>Sign In with Google</p>
+              </>
             )}
-            Sign In with Email
-          </Button>
-        </div>
-      </form>
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
-            Or continue with
-          </span>
+          </button>
         </div>
       </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
-        {isLoading ? (
-          <LoadingDots />
-        ) : (
-            <Github className=''/>
-        )}{" "}
-        Github
-      </Button>
-      <div>
-      <Button variant="outline" type="button" disabled={isLoading}>
-        {isLoading ? (
-          <LoadingDots />
-        ) : (
-          <Google className=''/>
-        )}{" "}
-        Anonymous
-      </Button>
-      </div>
-    </div>
-  )
-}
+    
+  );
+};
+
+export default SignInModal;
