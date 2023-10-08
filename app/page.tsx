@@ -1,10 +1,53 @@
+"use client"
+
 import Image from 'next/image'
 import Navbar from "@/app/Navbar/page";
 import Footer from '@/app/Footer/page';
 import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
+
 
 export default function Home() {
-  return (
+  const [userLocation, setUserLocation] = useState<GeolocationPosition | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let watchId: number | undefined;
+
+    // Check if the Geolocation API is available in the browser
+    if ('geolocation' in navigator) {
+      // Get the user's current location
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation(position);
+        },
+        (error) => {
+          setError(error.message);
+        }
+      );
+
+      // Watch for changes in the user's location
+      watchId = navigator.geolocation.watchPosition(
+        (position) => {
+          setUserLocation(position);
+        },
+        (error) => {
+          setError(error.message);
+        }
+      );
+    } else {
+      setError('Geolocation is not available in this browser.');
+    }
+
+    // Clean up the watchPosition when the component unmounts
+    return () => {
+      if (watchId) {
+        navigator.geolocation.clearWatch(watchId);
+      }
+    };
+  }, []);
+
+return (
     <main>
       <Navbar/>
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -76,6 +119,24 @@ export default function Home() {
           </p>
         </button>
       </div>
+            {/* Display user's location */}
+        {userLocation && (
+          <div className="my-4">
+            <h2 className="text-2xl font-semibold">Your Location:</h2>
+            <p>Latitude: {userLocation.coords.latitude}</p>
+            <p>Longitude: {userLocation.coords.longitude}</p>
+            <p>Accuracy: {userLocation.coords.accuracy}</p>
+            <p>Timestamp: {userLocation.timestamp}</p>
+            {/* Include other details like altitude, heading, etc. */}
+          </div>
+        )}
+
+        {/* Display error message if any */}
+        {error && (
+          <div className="my-4">
+            <p className="text-red-500">{error}</p>
+          </div>
+        )}
     </div>
     <Footer/>
     </main>
