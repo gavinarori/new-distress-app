@@ -71,8 +71,8 @@ function Footer() {
 						</div>
 				</div>
 			</div>
-			<div className="flex flex-row justify-center items-center text-center  p-1 ">
-			build by {''}
+			<div className="flex flex-col justify-center items-center text-center   p-1 ">
+			build by 
 			<a
           href="https://gavin-arori-porforlio.vercel.app/"
           target="_blank"
@@ -81,15 +81,11 @@ function Footer() {
         >
           Gavin Arori
         </a>
-        ,UI{' '}
-        <a
-          href=""
-          target="_blank"
-          className="font-semibold ml-1 hover:text-slate-200"
-          rel="noreferrer"
-        >
+        
+        <p
+          className="font-semibold ml-1 ">
           Front-end developer
-        </a>
+        </p>
 				<a
             href="https://www.buymeacoffee.com/arorigavin"
             target="_blank"
