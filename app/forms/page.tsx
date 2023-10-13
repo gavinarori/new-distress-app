@@ -3,11 +3,12 @@ import React from "react"
 //import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 //import { useState } from "react";
 import { useDemoModal } from "@/components/modal/demo-modal";
+import Footer from '@/app/Footer/page';
 
 export default function form() {
   const { DemoModal, setShowDemoModal } = useDemoModal();
   return (
-    <div>
+    <div className="ml-2 mr-2">
       <div className="space-y-12 ">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">reporting a crime </h2>
@@ -179,15 +180,16 @@ export default function form() {
           </div>
         </div>
       </div>
-      <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+      <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                  <DemoModal />
                 <button type="button" onClick={() => setShowDemoModal(true)} className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">
                   submit
                   </button>
-                <button type="button" className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">
+                <button type="button" className="mt-3 inline-flex w-full justify-center rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">
                   Cancel
                   </button>
               </div>
+              <Footer/>
     </div>
   )
 }

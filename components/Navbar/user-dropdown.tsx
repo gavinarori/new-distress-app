@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { signOut } from "next-auth/react";
-
 import Popover from "./popover";
 import Image from "next/image";
 import { Session } from "next-auth";

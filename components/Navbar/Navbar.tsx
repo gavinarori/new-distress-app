@@ -1,4 +1,4 @@
-
+"use client"
 import * as React from "react";
 import Link from "next/link";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
@@ -15,18 +15,6 @@ import { Popover, Transition } from '@headlessui/react'
 import UserDropdown from "./user-dropdown";
 import { Session } from "next-auth";
 
-
-const solutions = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#',  },
-  { name: 'Security', description: "Your customers' data will be safe and secure", href: '#', },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#',  },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', },
-]
-const callsToAction = [
-  { name: 'Watch demo', href: '#',  },
-  { name: 'Contact sales', href: '#', },
-]
   
 
 function ModeToggle( { session }: { session: Session | null }) {
@@ -40,57 +28,7 @@ function ModeToggle( { session }: { session: Session | null }) {
           <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-9" viewBox="0 0 32 32"><path d="M22.65 19.25a1 1 0 0 0-1.41 0l-1 1a2.17 2.17 0 0 1-3 0L11.92 15a2.44 2.44 0 0 1 0-3.46l.79-.89a.53.53 0 0 0 .06-.1.94.94 0 0 0 .49-.32 1 1 0 0 0-.15-1.4L8.43 5a1 1 0 0 0-1.34.07l-1 1a10.2 10.2 0 0 0 0 14.42L11.58 26a10.09 10.09 0 0 0 14.24 0l1.07-1.07a1 1 0 0 0 0-1.42zm1.75 5.32a8.08 8.08 0 0 1-11.4 0l-5.48-5.48a8.2 8.2 0 0 1 0-11.58l.35-.35L11 9.65l-.46.53a4.42 4.42 0 0 0 0 6.24l5.28 5.28a4.1 4.1 0 0 0 5.82 0l.33-.33 2.83 2.83zm-.95-10.48c.76-1.15.4-2.13-1.51-4s-2.88-2.27-4-1.51a1 1 0 0 1-1.14-1.7c2.89-1.91 5.36.57 6.56 1.76s3.64 3.67 1.76 6.56a1 1 0 0 1-.83.44 1 1 0 0 1-.56-.16 1 1 0 0 1-.28-1.39zm4.48 4a1 1 0 0 1-.78.37 1 1 0 0 1-.63-.22 1 1 0 0 1-.15-1.4c3.23-4 0-8.09-1.6-9.65s-5.61-4.83-9.65-1.6a1 1 0 0 1-1.4-.15 1 1 0 0 1 .15-1.41c3.62-2.9 8.34-2.23 12.32 1.74s4.64 8.74 1.74 12.36z"/></svg>
             <span className="font-bold sm:inline-block">Distress App</span>
           </a>
-          <nav className="flex items-center space-x-6 text-sm font-medium">
-          <Popover className="relative">
-      <Popover.Button className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-        <span>Solutions</span>
-        
-      </Popover.Button>
 
-      <Transition
-        as={Fragment}
-        enter="transition ease-out duration-200"
-        enterFrom="opacity-0 translate-y-1"
-        enterTo="opacity-100 translate-y-0"
-        leave="transition ease-in duration-150"
-        leaveFrom="opacity-100 translate-y-0"
-        leaveTo="opacity-0 translate-y-1"
-      >
-        <Popover.Panel className="absolute left-1/2 z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4">
-          <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
-            <div className="p-4">
-              {solutions.map((item) => (
-                <div key={item.name} className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
-                  <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-
-                  </div>
-                  <div>
-                    <a href={item.href} className="font-semibold text-gray-900">
-                      {item.name}
-                      <span className="absolute inset-0" />
-                    </a>
-                    <p className="mt-1 text-gray-600">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-              {callsToAction.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100"
-                >
-                  
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        </Popover.Panel>
-      </Transition>
-    </Popover>
-          </nav>
           <button className="rounded-lg h-7  w-full bg-accent  mt-2 ml-3 text-sm font-medium " >
             <p className="">documentation</p>
           </button>
@@ -130,29 +68,6 @@ function ModeToggle( { session }: { session: Session | null }) {
                     </path>
                 </svg>
             </a>
-            {/**mode icon */}
-              <div className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0">
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="outline" size="icon">
-                      <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                      <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                      <span className="sr-only">Toggle theme</span>
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem onClick={() => setTheme("light")}>
-                      Light
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setTheme("dark")}>
-                      Dark
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setTheme("system")}>
-                      System
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </div>
             </div>
           </nav>
         </div>

@@ -1,4 +1,4 @@
-"use client" 
+
 import Navbar from "./Navbar";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
