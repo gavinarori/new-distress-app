@@ -25,7 +25,7 @@ export default async function RootLayout({
         <Suspense fallback="...">
           <Nav />
         </Suspense>
-        <main >
+        <main  >
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
