@@ -145,7 +145,7 @@ return (
           </button> */}
           <Dialog>
       <DialogTrigger asChild>
-        <button className=' border-gray-200  hover:bg-gray-50 flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none'>tap to distress</button>
+        <button className=' border-gray-200  hover:bg-accent flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none'>tap to distress</button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -161,8 +161,8 @@ return (
             className={`${
               signInClicked
                 ? "cursor-not-allowed border-gray-200 "
-                : "border border-gray-200  hover:bg-gray-50"
-            } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm  transition-all duration-75 focus:outline-none ml-2 px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto`}
+                : "border border-gray-200  hover:bg-accent"
+            } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm  transition-all duration-75 focus:outline-none ml-2 px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-accent sm:mt-0 sm:w-auto`}
             onClick={() => {
               setSignInClicked(true);
               
@@ -192,7 +192,7 @@ return (
     </Dialog>
           
           <p className="text-sm text-gray-500 text-center">
-            please <Link href="/signIn" className='text-blue-300'>sign in</Link> first 
+            please <Link href="/signIn" className='text-blue-300 underline-offset-4'>sign in</Link> first 
           </p>
         </div>
       </div>
