@@ -80,7 +80,7 @@ return (
     <main>
     <div className="flex flex-col items-center justify-center p-4">
       <div >
-      <ThreeDots/>
+        {/* <iframe src="https://lottie.host/?file=427c5f4f-4e37-491a-8085-d71651fa614c/ixlmjMRVH0.json"></iframe>*/}
       </div>
       <div className="w-full overflow-hidden shadow-2xl md:max-w-lg md:rounded-2xl md:border md:border-gray-200">
         <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200  px-4 py-6 pt-8 text-center md:px-16">
@@ -143,9 +143,12 @@ return (
               </div>
             )}
           </button> */}
+           
           <Dialog>
       <DialogTrigger asChild>
-        <button className=' border-gray-200  hover:bg-accent flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none'>tap to distress</button>
+        <button className=' border-gray-200  hover:bg-accent flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none'>
+          tap to distress
+          </button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -216,6 +219,7 @@ return (
           </div>
         )}
       </div>
+      <iframe src="https://lottie.host/?file=555f8bd7-47d6-4735-9a50-8fca6fe38258/x1OVfA7Kda.json"></iframe>
       </div>
     </div>
     <Footer/>
