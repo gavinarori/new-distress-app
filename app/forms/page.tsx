@@ -5,7 +5,7 @@ import React from "react"
 import { useDemoModal } from "@/components/modal/demo-modal";
 import Footer from '@/app/Footer/page';
 
-export default function form() {
+export default function Form() {
   const { DemoModal, setShowDemoModal } = useDemoModal();
   return (
     <div className="ml-2 mr-2">
