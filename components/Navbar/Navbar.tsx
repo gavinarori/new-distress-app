@@ -10,7 +10,7 @@ function ModeToggle( { session }: { session: Session | null }) {
 
 
   return (
-    <header className=" sticky  top-0 z-50 w-full   backdrop-blur">
+    <header className=" sticky  w-screen   bg-gradient-to-r from-rose-100 to-teal-100  backdrop-blur">
       <div className=" flex pl-7  ml-auto  h-[75px] items-center ">
         <div className="mr-4  md:flex">
           <a className="mr-4 flex items-center space-x-2 mt-3 " href="/">

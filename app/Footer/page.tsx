@@ -11,7 +11,7 @@ import Twitter from '@/app/icons/twitter'
 function Footer() {
 	const { setTheme } = useTheme();
 	return (
-		<div>
+		<div className="bg-gradient-to-r from-rose-100 to-teal-100 w-screen">
 			<div className=" h-1/2 w-full border-t flex md:flex-row flex-col justify-around items-start p-2">
 				<div className="p-2 ">
 					<ul>
