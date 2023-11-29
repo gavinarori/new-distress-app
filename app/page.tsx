@@ -30,13 +30,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 
-import { Session } from "next-auth";
 
 
 
 
 
-export default function Home({ session }: { session: Session | null }) {
+
+export default function Home() {
   const [userLocation, setUserLocation] = useState<GeolocationPosition | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [signInClicked, setSignInClicked] = useState(false);
