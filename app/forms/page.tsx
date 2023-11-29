@@ -5,191 +5,146 @@ import React from "react"
 import { useDemoModal } from "@/components/modal/demo-modal";
 import Footer from '@/app/Footer/page';
 
-export default function Form() {
+export default function htmlForm() {
   const { DemoModal, setShowDemoModal } = useDemoModal();
   return (
-    <div className="ml-2 mr-2">
-      <div className="space-y-12 ">
-        <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">reporting a crime </h2>
-          <p className="mt-1 text-sm leading-6 text-gray-600">
-            This information will not be disclosed without your consent.
-          </p>
+    <div className="">
 
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-4">
-              <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
-                Username
-              </label>
-              <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                  <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm">workcation.com/</span>
-                  <input
-                    type="text"
-                    name="username"
-                    id="username"
-                    autoComplete="username"
-                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                    placeholder="janesmith"
-                  />
-                </div>
-              </div>
-            </div>
 
-            <div className="col-span-full">
-              <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
-                About
-              </label>
-              <div className="mt-2">
-                <textarea
-                  id="about"
-                  name="about"
-                  rows={3}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  defaultValue={''}
-                />
-              </div>
-              <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
-            </div>
-          </div>
-        </div>
+<section className="bg-gradient-to-r from-rose-100 to-teal-100 w-screen">
+  <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+      <div className="lg:col-span-2 lg:py-12">
+        <p className="max-w-xl text-lg">
+          At the same time, the fact that we are wholly owned and totally
+          independent from manufacturer and other group control gives you
+          confidence that we will only recommend what is right htmlFor you.
+        </p>
 
-        <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
-          <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
+        <div className="mt-8">
+          <a href="" className="text-2xl font-bold text-pink-600">
+            0151 475 4450
+          </a>
 
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-3">
-              <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                First name
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="first-name"
-                  id="first-name"
-                  autoComplete="given-name"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-3">
-              <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
-                Last name
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="last-name"
-                  id="last-name"
-                  autoComplete="family-name"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-4">
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                Email address
-              </label>
-              <div className="mt-2">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-3">
-              <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
-                Country
-              </label>
-              <div className="mt-2">
-                <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                >
-                  <option>United States</option>
-                  <option>Canada</option>
-                  <option>Mexico</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="col-span-full">
-              <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
-                Street address
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="street-address"
-                  id="street-address"
-                  autoComplete="street-address"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-2 sm:col-start-1">
-              <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900">
-                City
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="city"
-                  id="city"
-                  autoComplete="address-level2"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label  className="block text-sm font-medium leading-6 text-gray-900">
-                State / Province
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="region"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label  className="block text-sm font-medium leading-6 text-gray-900">
-                ZIP / Postal code
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="postal-code"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-          </div>
+          <address className="mt-2 not-italic">
+            282 Kevin Brook, Imogeneborough, CA 58517
+          </address>
         </div>
       </div>
-      <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                 <DemoModal />
+
+      <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+        <form action="" className="space-y-4">
+          <div>
+            <label className="sr-only" htmlFor="name">Name</label>
+            <input
+              className="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="Name"
+              type="text"
+              id="name"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label className="sr-only" htmlFor="email">Email</label>
+              <input
+                className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                placeholder="Email address"
+                type="email"
+                id="email"
+              />
+            </div>
+
+            <div>
+              <label className="sr-only" htmlFor="phone">Phone</label>
+              <input
+                className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                placeholder="Phone Number"
+                type="tel"
+                id="phone"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
+            <div>
+              <input
+                className="peer sr-only"
+                id="option1"
+                type="radio"
+                
+                name="option"
+              />
+
+              <label
+                htmlFor="option1"
+                className="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                
+              >
+                <span className="text-sm"> Option 1 </span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                className="peer sr-only"
+                id="option2"
+                type="radio"
+                
+                name="option"
+              />
+
+              <label
+                htmlFor="option2"
+                className="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                
+              >
+                <span className="text-sm"> Option 2 </span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                className="peer sr-only"
+                id="option3"
+                type="radio"
+                
+                name="option"
+              />
+
+              <label
+                htmlFor="option3"
+                className="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                
+              >
+                <span className="text-sm"> Option 3 </span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label className="sr-only" htmlFor="message">Message</label>
+
+            <textarea
+              className="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="Message"
+              
+              id="message"
+            ></textarea>
+          </div>
+
+          <div className="mt-4">
+          <DemoModal />
                 <button type="button" onClick={() => setShowDemoModal(true)} className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">
                   submit
                   </button>
-                <button type="button" className="mt-3 inline-flex w-full justify-center rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">
-                  Cancel
-                  </button>
-              </div>
-              <Footer/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+    <Footer/>
     </div>
   )
 }
