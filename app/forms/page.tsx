@@ -5,12 +5,10 @@ import React from "react"
 import { useDemoModal } from "@/components/modal/demo-modal";
 import Footer from '@/app/Footer/page';
 
-export default function htmlForm() {
+export default function HtmlForm() {
   const { DemoModal, setShowDemoModal } = useDemoModal();
   return (
     <div className="">
-
-
 <section className="bg-gradient-to-r from-rose-100 to-teal-100 w-screen">
   <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
     <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
