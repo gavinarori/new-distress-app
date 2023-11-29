@@ -32,12 +32,12 @@ export default function htmlForm() {
         </div>
       </div>
 
-      <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+      <div className="rounded-lg  p-8 shadow-lg lg:col-span-3 lg:p-12">
         <form action="" className="space-y-4">
           <div>
             <label className="sr-only" htmlFor="name">Name</label>
             <input
-              className="w-full rounded-lg border-gray-200 p-3 text-sm"
+              className="w-full rounded-lg border-gray-600 p-3 text-sm"
               placeholder="Name"
               type="text"
               id="name"
@@ -48,7 +48,7 @@ export default function htmlForm() {
             <div>
               <label className="sr-only" htmlFor="email">Email</label>
               <input
-                className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                className="w-full rounded-lg border-gray-600 p-3 text-sm"
                 placeholder="Email address"
                 type="email"
                 id="email"
@@ -58,7 +58,7 @@ export default function htmlForm() {
             <div>
               <label className="sr-only" htmlFor="phone">Phone</label>
               <input
-                className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                className="w-full rounded-lg border-gray-600 p-3 text-sm"
                 placeholder="Phone Number"
                 type="tel"
                 id="phone"
@@ -78,7 +78,7 @@ export default function htmlForm() {
 
               <label
                 htmlFor="option1"
-                className="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                className="block w-full rounded-lg border border-gray-600 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
                 
               >
                 <span className="text-sm"> Option 1 </span>
@@ -93,16 +93,14 @@ export default function htmlForm() {
                 
                 name="option"
               />
-
               <label
                 htmlFor="option2"
-                className="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                className="block w-full rounded-lg border border-gray-600 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
                 
               >
                 <span className="text-sm"> Option 2 </span>
               </label>
             </div>
-
             <div>
               <input
                 className="peer sr-only"
@@ -114,7 +112,7 @@ export default function htmlForm() {
 
               <label
                 htmlFor="option3"
-                className="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                className="block w-full rounded-lg border border-gray-600 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
                 
               >
                 <span className="text-sm"> Option 3 </span>
