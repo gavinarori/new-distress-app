@@ -36,6 +36,7 @@ import {
 
 
 
+
 export default function Home() {
   const [userLocation, setUserLocation] = useState<GeolocationPosition | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -84,6 +85,7 @@ return (
   
   
   <AnimatePresence>
+
   <div className="min-h-[100vh] sm:min-h-screen w-screen flex md:flex-row sm:flex-col relative bg-gradient-to-r from-rose-100 to-teal-100 font-inter overflow-hidden">
     <main className="flex flex-col justify-center h-[90%]   w-screen overflow-hidden grid-rows-[1fr_repeat(3,auto)_1fr] z-[100] pt-[30px] pb-[320px] px-4 md:px-20 md:py-0">
       <motion.h1

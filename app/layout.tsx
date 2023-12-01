@@ -23,7 +23,7 @@ export default async function RootLayout({
       <body className={inter.className} suppressHydrationWarning={true}>
         
         <Suspense fallback="...">
-          <Nav />
+        <Nav />
         </Suspense>
         <main  >
         <ThemeProvider
