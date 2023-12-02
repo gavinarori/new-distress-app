@@ -19,9 +19,7 @@ import { CalendarDateRangePicker } from "@/app/dashboard/components/date-range-p
 import { MainNav } from "@/app/dashboard/components/main-nav"
 import { Overview } from "@/app/dashboard/components/overview"
 import { RecentSales } from "@/app/dashboard/components/recent-sales"
-import { Search } from "@/app/dashboard/components/search"
 
-import { UserNav } from "@/app/dashboard/components/user-nav"
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -70,7 +68,7 @@ export default function DashboardPage() {
                   </CardContent>
                 </Card>
               </div>
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
+              <div className="grid gap-4 md:grid-cols-2  lg:grid-cols-7">
                 <Card className="col-span-4">
                   <CardHeader>
                     <CardTitle>Overview</CardTitle>
