@@ -4,13 +4,26 @@ import Link from "next/link";
 import UserDropdown from "./user-dropdown";
 import { Session } from "next-auth";
 
+import {
+  Dialog,
   
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import UserAuthForm  from "@/app/signIn/user-auth-form"
+import { Button } from "@/components/ui/button"
+
+
 
 function ModeToggle( { session }: { session: Session | null }) {
 
 
   return (
-    <header className=" sticky  top-0 z-50 w-full   backdrop-blur">
+    <header className=" sticky  w-screen   bg-gradient-to-r from-rose-100 to-teal-100  backdrop-blur">
       <div className=" flex pl-7  ml-auto  h-[75px] items-center ">
         <div className="mr-4  md:flex">
           <a className="mr-4 flex items-center space-x-2 mt-3 " href="/">
@@ -27,11 +40,53 @@ function ModeToggle( { session }: { session: Session | null }) {
         {session ? (
               <UserDropdown session={session} />
             ) : (
-          <Link href="/signIn">
-          <button className="rounded-full border border-gray-100 bg-black p-1.5 px-4  text-sm text-white transition-all hover:bg-white hover:text-black">
+          <Dialog>
+          <DialogTrigger>
+            <Button className="rounded-full border border-gray-100 bg-black p-1.5 px-4  text-sm text-white transition-all hover:bg-white hover:text-black">
             <p className="text-sm font-medium md:space-x-3 sm:space-x-2">sign In</p>
-          </button>
-          </Link>)}
+          </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogDescription>
+              <div className="relative h-[800px] flex-col items-center bg-gradient-to-r from-rose-100 to-teal-100 w-screen justify-center lg:max-w-none  lg:px-0">
+        <div className=" flex min-h-full flex-col justify-center px-6 py-12 lg:p-8">
+          <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+            <div className="flex flex-col space-y-2 text-center">
+              <h1 className="text-2xl font-semibold tracking-tight">
+                Create an account
+              </h1>
+              <p className="text-sm text-muted-foreground">
+                Enter your email below to create your account
+              </p>
+            </div>
+            <UserAuthForm />
+            <p className="px-8 text-center text-sm text-muted-foreground">
+              By clicking continue, you agree to our{" "}
+              <Link
+                href="/terms"
+                className="underline underline-offset-4 hover:text-primary"
+              >
+                Terms of Service
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/privacy"
+                className="underline underline-offset-4 hover:text-primary"
+              >
+                Privacy Policy
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+        
+          )}
           <nav className="flex sm:inline-block ">
             {/**discord icon */}
             <div className="flex-row pt-2 justify-end right-0">
