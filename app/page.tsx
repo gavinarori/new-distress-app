@@ -8,6 +8,8 @@ import { useDemoModal } from "@/components/modal/demo-modal";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import Services from '@/app/services/services'
+import OpenSource from './contribution/openSource';
 import {
   Select,
   SelectContent,
@@ -228,6 +230,8 @@ return (
       />
        </div>
   </div>
+  <Services/>
+  <OpenSource/>
   <Footer/>
 </AnimatePresence>
 
